@@ -16,12 +16,13 @@ describe "Chart Data" do
 
     hour = date.hour + ( date.min / 60 )
 
+    puts "DATE INPUTS===== year: " + date.year.to_s + " - month: " + date.month.to_s + " - day: " + date.day.to_s + " - hour: " + hour.to_s
+
     jd = Swe4r::swe_julday(date.year, date.month, date.day, hour)
 
     body = Swe4r::swe_calc_ut(jd, 1, Swe4r::SEFLG_MOSEPH|Swe4r::SEFLG_TOPOCTR)
     longitude = body[0]
 
-    expect(1).to equal(1)
     expect(jd).to equal(2444789.625)
     expect(longitude).to equal(132.34025732269768)
 
