@@ -21,7 +21,6 @@ describe "Chart Data" do
     body = Swe4r::swe_calc_ut(jd, 1, Swe4r::SEFLG_MOSEPH|Swe4r::SEFLG_TOPOCTR)
     longitude = body[0]
 
-    #run tests
     expect(jd).to equal(2444789.625)
     expect(longitude).to equal(132.34025732269768)
 
