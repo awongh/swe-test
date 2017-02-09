@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'test/unit'
 require 'swe4r'
 
@@ -9,7 +8,7 @@ class Swe4rTest < Test::Unit::TestCase
   end
   
   def test_swe_julday
-    #assert_equal(2444838.972916667, Swe4r::swe_julday(1981, 8, 22, 11.35))
+    assert_equal(2444838.972916667, Swe4r::swe_julday(1981, 8, 22, 11.35))
     #original gem value
     #assert_equal(32444838.972916667, Swe4r::swe_julday(1981, 8, 22, 11.35))
   end
@@ -106,7 +105,7 @@ class Swe4rTest < Test::Unit::TestCase
   def test_swe_houses
     
     # Test each house system
-    systems = ['P','K','O','R','C','A','E','V','X','H','T','B','G']
+    systems = ['P','K','O','R','C','A','E','V','X','H','T','B']
     systems.each do |s|
       houses = Swe4r::swe_houses(2444838.972916667, 45.45, -112.183333, s)
       assert_equal(23, houses.length)
