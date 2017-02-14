@@ -2,6 +2,19 @@ require 'swe4r'
 
 describe "Chart Data" do
 
+  it 'calculates julian date correctly' do
+
+    latitude = 37.7749295
+
+    longitude = -122.41941550000001
+
+    Swe4r::swe_set_topo(longitude, latitude, 0)
+
+    jd = Swe4r::swe_julday(1981, 7, 1, 1)
+
+    expect(jd).to be_within(0.01).of(2444786.5416666665)
+  end
+
   it 'calculates degrees the same on all systems' do
 
     time = 363038400
